@@ -27,6 +27,7 @@ def main() -> Tuple[int, int]:
     return count_files, count_files_was_processed
 
 
+@logger.catch(level='ERROR')
 def log_data_examples():
     for processor in DataFile.PROCESSORS:
         data_iter = pd.read_sql_table(processor.db_table_name, engine, chunksize=5)

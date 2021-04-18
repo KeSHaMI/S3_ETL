@@ -25,7 +25,7 @@ def init_db():
     try:
         engine = create_engine(f"postgresql+psycopg2://{db_user}:{db_password}@db:5432/{db_name}")
 
-        # Deleting db data on each launch, to check previous data comment out this line
+        # Cleans db if needed
         # Base.metadata.drop_all(bind=engine)
 
         Base.metadata.create_all(bind=engine)
