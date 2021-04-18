@@ -8,7 +8,7 @@ from src.logger import logger
 from src.db import engine
 
 
-@logger.catch(level='ERROR')
+@logger.catch
 def main() -> Tuple[int, int]:
     count_files = 0
     count_files_was_processed = 0
@@ -27,14 +27,14 @@ def main() -> Tuple[int, int]:
     return count_files, count_files_was_processed
 
 
-@logger.catch(level='ERROR')
+@logger.catch
 def log_data_examples():
     for processor in DataFile.PROCESSORS:
         data_iter = pd.read_sql_table(processor.db_table_name, engine, chunksize=5)
         for data in data_iter:
-            logger.debug(data.to_csv())
+            logger.info(data.to_csv())
             # For better file formatting
-            logger.debug('\n\n')
+            logger.info('\n\n')
             # reading only one chunk
             break
 

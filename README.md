@@ -12,7 +12,7 @@ ETL pipeline which works with S3 bucket
 # Notes
   1. Script automatically starts when `docker-compose up` called
   2. Script (docker-compose volumes, to be precise) creates database and logs directories (you can use database to explore loaded data)
-  3. In logs folder there are 3 files data_examples.log(generated in log_data_examples) contains csv formatted 5 table rows of each table, script_result.log contains list of file processed and gives script summary, error.log contains errors and log any exceptions thrown in main func. 
+  3. In logs folder there are 2 files script_result.log contains list of file processed and gives script summary(with loaded data examples), error.log contains errors and log any exceptions thrown in main func. 
 
 **Fun fact**: There are quite a lot apps where byte_size is divisible by 256
   
