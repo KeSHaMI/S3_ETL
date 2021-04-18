@@ -14,5 +14,5 @@ ETL pipeline which works with S3 bucket
   2. Script (docker-compose volumes, to be precise) creates database and logs directories (you can use database to explore loaded data)
   3. In logs folder there are 2 files script_result.log contains list of file processed and gives script summary(with loaded data examples), error.log contains errors and log any exceptions thrown in main func. 
 
-**Fun fact**: There are quite a lot apps where byte_size is divisible by 256
+**Fun fact**: There are quite a lot apps where size_bytes is divisible by 256
   
