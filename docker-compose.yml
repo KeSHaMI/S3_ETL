@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  db:
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    volumes:
+      - ./database/:/var/lib/postgresql/data
+    env_file:
+      - variables.env
+    networks:
+      - main
+  app:
+    build: .
+    command: >
+      sh -c "python src/main.py"
+    volumes:
+      - ./src:/code/src/
+      - ./logs/:/code/logs/
+    env_file:
+      - variables.env
+    networks:
+      - main
+    depends_on:
+      - db
+
+
+networks:
+  main:
