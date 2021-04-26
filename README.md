@@ -5,7 +5,7 @@ ETL pipeline which works with S3 bucket
   1. Install docker-compose ([doc](https://docs.docker.com/compose/install/))
   2. Clone repo
   3. Enter created directory
-  4. Update veariables.env with yours AWS credentials
+  4. Update variables.env with yours AWS credentials
   5. `docker-compose build`
   6. `docker-compose up`
   
